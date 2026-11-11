@@ -1,0 +1,236 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7fb;
+    color: #172b4d;
+}
+
+/* ENCABEZADO */
+header {
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 7%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #0756a5;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263b59;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0878d1;
+}
+
+/* PORTADA */
+.portada {
+    min-height: 510px;
+    padding: 65px 8%;
+    background: linear-gradient(120deg, #073c78, #087bc1);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 45px;
+    color: white;
+}
+
+.portada-contenido p:first-child {
+    color: #a9d9ff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.portada h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.portada-contenido p {
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 25px;
+    background-color: white;
+    color: #0756a5;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #cce8ff;
+    transform: translateY(-3px);
+}
+
+.portada-imagen {
+    min-height: 310px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 18px;
+    background-color: rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* SECCIÓN DE FASES */
+.fases {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.fases h2 {
+    font-size: 32px;
+    color: #103d70;
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+/* TARJETAS */
+.tarjeta {
+    background-color: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.13);
+}
+
+.imagen-tarjeta {
+    height: 210px;
+    background: linear-gradient(135deg, #0756a5, #138bd1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.tarjeta-contenido {
+    padding: 25px;
+}
+
+.tarjeta-contenido span {
+    color: #087bc1;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tarjeta h3 {
+    color: #173b66;
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.tarjeta p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 72px;
+}
+
+.tarjeta a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #087bc1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tarjeta a:hover {
+    color: #063b70;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    padding: 28px;
+    background-color: #082d55;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+    }
+
+    .portada h1 {
+        font-size: 34px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
