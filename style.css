@@ -1,135 +1,223 @@
 
-/* CONFIGURACIÓN GENERAL */
+/* =====================================
+   1. CONFIGURACIÓN GENERAL
+===================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    background-color: #f4f7fb;
-    color: #172b4d;
+    background: #f5f8fc;
+    color: #20344d;
+    line-height: 1.6;
 }
 
-/* ENCABEZADO */
-header {
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================
+   2. ENCABEZADO Y MENÚ
+===================================== */
+
+.encabezado {
     width: 100%;
-    min-height: 75px;
-    padding: 18px 7%;
-    background-color: #ffffff;
+    min-height: 76px;
+    padding: 15px 7%;
+    background: #ffffff;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    position: relative;
-    z-index: 10;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
 }
 
 .logo {
     color: #0756a5;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-nav {
+.menu {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 27px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #263b59;
-    font-size: 14px;
+.menu a {
+    color: #334963;
+    font-size: 13px;
     font-weight: bold;
     transition: 0.3s;
+    position: relative;
 }
 
-nav a:hover {
-    color: #0878d1;
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #0783ce;
+    bottom: -7px;
+    left: 0;
+    transition: width 0.3s;
 }
 
-/* PORTADA */
+.menu a:hover {
+    color: #0783ce;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================
+   3. PORTADA PRINCIPAL
+===================================== */
+
 .portada {
     min-height: 510px;
     padding: 65px 8%;
-    background: linear-gradient(120deg, #073c78, #087bc1);
+
+    background: linear-gradient(
+        115deg,
+        #073b73,
+        #087fc2
+    );
+
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     gap: 45px;
+
     color: white;
 }
 
-.portada-contenido p:first-child {
-    color: #a9d9ff;
+.etiqueta {
+    display: inline-block;
+    color: #b7e1ff;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .portada h1 {
     font-size: 43px;
     line-height: 1.2;
     margin-bottom: 22px;
+    max-width: 620px;
 }
 
 .portada-contenido p {
-    line-height: 1.7;
-    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #e3f2ff;
+    max-width: 500px;
 }
 
 .boton {
     display: inline-block;
     margin-top: 28px;
-    padding: 14px 25px;
-    background-color: white;
+    padding: 13px 25px;
+
+    background: white;
     color: #0756a5;
-    text-decoration: none;
+
     border-radius: 6px;
+    font-size: 14px;
     font-weight: bold;
+
     transition: 0.3s;
 }
 
 .boton:hover {
-    background-color: #cce8ff;
-    transform: translateY(-3px);
+    background: #dceeff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portada-imagen {
     min-height: 310px;
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 18px;
-    background-color: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    color: #ffffff;
-    font-weight: bold;
     padding: 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
-/* SECCIÓN DE FASES */
+.portada-imagen:hover {
+    background: rgba(255, 255, 255, 0.19);
+    transform: scale(1.015);
+}
+
+
+/* =====================================
+   4. TÍTULOS DE LAS SECCIONES
+===================================== */
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.titulo-seccion span {
+    display: block;
+    color: #0783ce;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 9px;
+}
+
+.titulo-seccion h2 {
+    color: #123e6c;
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    color: #718096;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   5. TARJETAS DE LAS TRES FASES
+===================================== */
+
 .fases {
     padding: 75px 8%;
     text-align: center;
-}
-
-.fases h2 {
-    font-size: 32px;
-    color: #103d70;
-    margin-bottom: 12px;
-}
-
-.subtitulo {
-    color: #64748b;
-    margin-bottom: 40px;
 }
 
 .contenedor-tarjetas {
@@ -139,87 +227,346 @@ nav a:hover {
     text-align: left;
 }
 
-/* TARJETAS */
 .tarjeta {
-    background-color: white;
+    background: white;
     border-radius: 13px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .tarjeta:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.13);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
 }
 
 .imagen-tarjeta {
-    height: 210px;
-    background: linear-gradient(135deg, #0756a5, #138bd1);
-    color: white;
+    height: 205px;
+
+    background: linear-gradient(
+        135deg,
+        #0756a5,
+        #149bd8
+    );
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 15px;
+    color: white;
+    font-size: 12px;
     font-weight: bold;
 }
 
 .tarjeta-contenido {
-    padding: 25px;
+    padding: 24px;
 }
 
-.tarjeta-contenido span {
-    color: #087bc1;
-    font-size: 12px;
+.tarjeta-contenido > span {
+    color: #0783ce;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .tarjeta h3 {
     color: #173b66;
-    font-size: 20px;
+    font-size: 19px;
     margin: 12px 0;
 }
 
 .tarjeta p {
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.7;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.8;
     min-height: 72px;
 }
 
 .tarjeta a {
     display: inline-block;
-    margin-top: 20px;
-    color: #087bc1;
-    text-decoration: none;
+    margin-top: 18px;
+    color: #0783ce;
+    font-size: 13px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .tarjeta a:hover {
     color: #063b70;
+    transform: translateX(5px);
 }
 
-/* PIE DE PÁGINA */
-footer {
-    padding: 28px;
-    background-color: #082d55;
+
+/* =====================================
+   6. SECCIONES DE LAS FASES
+===================================== */
+
+.detalle-fase {
+    padding: 80px 8%;
+    scroll-margin-top: 90px;
+}
+
+.fondo-claro {
+    background: #eaf2fa;
+}
+
+.contenido-fase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 45px;
+}
+
+.texto-fase h3 {
+    color: #124675;
+    font-size: 19px;
+    margin: 22px 0 10px;
+}
+
+.texto-fase h3:first-child {
+    margin-top: 0;
+}
+
+.texto-fase p {
+    color: #596d82;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.lista-datos {
+    padding-left: 20px;
+    color: #596d82;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.lista-datos li::marker {
+    color: #0783ce;
+}
+
+.lista-datos strong {
+    color: #244768;
+}
+
+.imagen-fase {
+    min-height: 330px;
+    padding: 20px;
+
+    border-radius: 13px;
+    background: linear-gradient(
+        135deg,
+        #0756a5,
+        #1599d5
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.mapa-comunidad {
+    background: white;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.mapa-comunidad h3 {
+    color: #124675;
+    margin-bottom: 8px;
+}
+
+.mapa-comunidad p {
+    color: #718096;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.mapa-comunidad iframe {
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* =====================================
+   7. BIBLIOTECA FOTOGRÁFICA
+===================================== */
+
+.biblioteca {
+    padding: 80px 8%;
+    background: white;
+    scroll-margin-top: 90px;
+}
+
+.carrusel {
+    max-width: 900px;
+    margin: auto;
+}
+
+.imagen-principal {
+    width: 100%;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #dce6f0;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 35, 75, 0.65);
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flecha:hover {
+    background: #087fc2;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.anterior {
+    left: 16px;
+}
+
+.siguiente {
+    right: 16px;
+}
+
+.descripcion-imagen {
+    padding: 18px 5px;
+}
+
+.descripcion-imagen h3 {
+    color: #123e6c;
+    font-size: 19px;
+}
+
+.descripcion-imagen p {
+    color: #718096;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.miniaturas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.miniatura {
+    height: 105px;
+    padding: 0;
+    border: 3px solid transparent;
+    border-radius: 7px;
+    overflow: hidden;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
+}
+
+.miniatura:hover img {
+    transform: scale(1.08);
+}
+
+.miniatura.activa {
+    border-color: #0783ce;
+    box-shadow: 0 3px 12px rgba(0, 90, 160, 0.2);
+}
+
+
+/* =====================================
+   8. CONCLUSIÓN
+===================================== */
+
+.conclusion {
+    padding: 70px 15%;
+    background: #edf4fa;
+    text-align: center;
+}
+
+.conclusion > p {
+    max-width: 850px;
+    margin: auto;
+    color: #596d82;
+    font-size: 15px;
+    line-height: 2;
+    text-align: justify;
+}
+
+
+/* =====================================
+   9. PIE DE PÁGINA
+===================================== */
+
+.pie-pagina {
+    padding: 30px 15px;
+    background: #082d55;
     color: white;
     text-align: center;
-    font-size: 14px;
 }
 
-/* ADAPTACIÓN A MÓVILES */
-@media (max-width: 850px) {
-    header {
+.pie-pagina p {
+    font-size: 13px;
+    margin: 4px 0;
+    color: #d7e8f7;
+}
+
+
+/* =====================================
+   10. ADAPTACIÓN A TABLET Y MÓVIL
+===================================== */
+
+@media (max-width: 900px) {
+
+    .encabezado {
         flex-direction: column;
-        gap: 18px;
+        padding: 18px 5%;
     }
 
-    nav {
-        flex-wrap: wrap;
+    .menu {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
     }
 
     .portada {
@@ -227,10 +574,67 @@ footer {
     }
 
     .portada h1 {
-        font-size: 34px;
+        font-size: 36px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenido-fase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .menu {
+        gap: 13px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .portada {
+        padding: 55px 7%;
+    }
+
+    .portada h1 {
+        font-size: 31px;
     }
 
     .contenedor-tarjetas {
         grid-template-columns: 1fr;
+    }
+
+    .detalle-fase,
+    .biblioteca,
+    .fases {
+        padding: 55px 6%;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 25px;
+    }
+
+    .imagen-principal {
+        height: 260px;
+    }
+
+    .miniaturas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .miniatura {
+        height: 95px;
+    }
+
+    .conclusion {
+        padding: 55px 8%;
     }
 }
