@@ -1,181 +1,75 @@
 
-// =====================================
-// 1. FOTOGRAFÍAS DE LA BIBLIOTECA
-// =====================================
+document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
+    const phases = document.querySelector(".phases-section");
+    const gallery = document.querySelector(".gallery-section");
 
-const fotografias = [
-    {
-        imagen: "imagenes/comunidad-01.jpg",
-        titulo: "Urbanización Las Manuelas",
-        descripcion: "Vista de la comunidad donde se desarrolla el proyecto."
-    },
-    {
-        imagen: "imagenes/comunidad-02.jpg",
-        titulo: "Calles de la comunidad",
-        descripcion: "Registro fotográfico de las vías y espacios comunitarios."
-    },
-    {
-        imagen: "imagenes/computadora-01.jpg",
-        titulo: "Computadora Acer",
-        descripcion: "Equipo portátil objeto de la evaluación técnica."
-    },
-    {
-        imagen: "imagenes/mantenimiento-01.jpg",
-        titulo: "Proceso de mantenimiento",
-        descripcion: "Registro de las actividades realizadas durante el proyecto."
+    const phaseViews = document.querySelectorAll(".phase-view");
+    const phaseButtons = document.querySelectorAll("[data-phase]");
+    const homeButtons = document.querySelectorAll("[data-home]");
+
+    const galleryLink = document.querySelector(
+        '.navigation a[href="#galeria"]'
+    );
+
+    // Mostrar la página principal
+    function showHome() {
+        phaseViews.forEach(phase => {
+            phase.hidden = true;
+        });
+
+        hero.hidden = false;
+        phases.hidden = false;
+        gallery.hidden = false;
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
-];
 
+    // Mostrar una fase específica
+    function showPhase(id) {
+        const selectedPhase = document.getElementById(id);
 
-// =====================================
-// 2. ELEMENTOS DEL CARRUSEL
-// =====================================
+        if (!selectedPhase) return;
 
-const imagenPrincipal = document.getElementById("imagenCarrusel");
-const tituloImagen = document.getElementById("tituloImagen");
-const textoImagen = document.getElementById("textoImagen");
+        hero.hidden = true;
+        phases.hidden = true;
+        gallery.hidden = true;
 
-const botonAnterior = document.getElementById("anterior");
-const botonSiguiente = document.getElementById("siguiente");
+        phaseViews.forEach(phase => {
+            phase.hidden = phase !== selectedPhase;
+        });
 
-const miniaturas = document.querySelectorAll(".miniatura");
-const carrusel = document.querySelector(".carrusel");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 
-let indiceActual = 0;
-let temporizador;
-
-
-// =====================================
-// 3. MOSTRAR UNA FOTOGRAFÍA
-// =====================================
-
-function mostrarFotografia(indice) {
-
-    indiceActual = indice;
-
-    imagenPrincipal.src = fotografias[indiceActual].imagen;
-
-    imagenPrincipal.alt = fotografias[indiceActual].titulo;
-
-    tituloImagen.textContent = fotografias[indiceActual].titulo;
-
-    textoImagen.textContent = fotografias[indiceActual].descripcion;
-
-    miniaturas.forEach((miniatura, posicion) => {
-
-        miniatura.classList.remove("activa");
-
-        if (posicion === indiceActual) {
-            miniatura.classList.add("activa");
-        }
-
+    // Botones "Ver más"
+    phaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            showPhase(button.dataset.phase);
+        });
     });
 
-}
-
-
-// =====================================
-// 4. AVANZAR Y RETROCEDER
-// =====================================
-
-function siguienteFotografia() {
-
-    let nuevoIndice = (indiceActual + 1) % fotografias.length;
-
-    mostrarFotografia(nuevoIndice);
-
-}
-
-
-function anteriorFotografia() {
-
-    let nuevoIndice =
-        (indiceActual - 1 + fotografias.length) % fotografias.length;
-
-    mostrarFotografia(nuevoIndice);
-
-}
-
-
-// =====================================
-// 5. BOTONES DEL CARRUSEL
-// =====================================
-
-botonSiguiente.addEventListener("click", () => {
-
-    siguienteFotografia();
-    reiniciarCarrusel();
-
-});
-
-
-botonAnterior.addEventListener("click", () => {
-
-    anteriorFotografia();
-    reiniciarCarrusel();
-
-});
-
-
-// =====================================
-// 6. SELECCIÓN DE MINIATURAS
-// =====================================
-
-miniaturas.forEach((miniatura, posicion) => {
-
-    miniatura.addEventListener("click", () => {
-
-        mostrarFotografia(posicion);
-        reiniciarCarrusel();
-
+    // Botones "Inicio" y "Volver al inicio"
+    homeButtons.forEach(button => {
+        button.addEventListener("click", showHome);
     });
 
+    // Acceso a la galería
+    if (galleryLink) {
+        galleryLink.addEventListener("click", event => {
+            event.preventDefault();
+
+            showHome();
+
+            gallery.scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    }
 });
-
-
-// =====================================
-// 7. CARRUSEL AUTOMÁTICO
-// =====================================
-
-function iniciarCarrusel() {
-
-    temporizador = setInterval(() => {
-
-        siguienteFotografia();
-
-    }, 4000);
-
-}
-
-
-function detenerCarrusel() {
-
-    clearInterval(temporizador);
-
-}
-
-
-function reiniciarCarrusel() {
-
-    detenerCarrusel();
-    iniciarCarrusel();
-
-}
-
-
-// =====================================
-// 8. PAUSAR AL PASAR EL RATÓN
-// =====================================
-
-carrusel.addEventListener("mouseenter", detenerCarrusel);
-
-carrusel.addEventListener("mouseleave", iniciarCarrusel);
-
-
-// =====================================
-// 9. INICIAR LA BIBLIOTECA
-// =====================================
-
-mostrarFotografia(0);
-
-iniciarCarrusel();
