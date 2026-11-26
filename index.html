@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,410 +7,204 @@
     <title>Proyecto Sociotecnológico | ACER</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- ENCABEZADO -->
     <header class="header">
-        <a href="#" class="logo">PROYECTO<span>.</span></a>
-
-        <nav class="navigation">
+        <a href="#" class="logo" data-home>PROYECTO<span>.</span></a>
+        <nav class="navigation" aria-label="Navegación principal">
             <button class="nav-link" data-home>Inicio</button>
-            <a class="nav-link" href="#galeria">Galería</a>
+            <button class="nav-link" data-phase="fase1">Fase 1</button>
+            <button class="nav-link" data-phase="fase2">Fase 2</button>
+            <button class="nav-link" data-phase="fase3">Fase 3</button>
+            <a href="#galeria" class="nav-link" data-gallery-link>Galería</a>
         </nav>
     </header>
-
-
-    <!-- CONTENIDO PRINCIPAL -->
+                               
     <main>
-
-        <!-- PORTADA -->
         <section class="hero" id="inicio">
-
             <div class="hero-content">
                 <span class="eyebrow">PROYECTO SOCIOTECNOLÓGICO</span>
-
-                <h1>
-                    Tecnología al servicio
-                    <span>de la comunidad.</span>
-                </h1>
-
-                <p>
-                    Servicio técnico a una computadora portátil
-                    marca ACER, ubicada en la Urbanización
-                    Las Manuelas, Municipio Andrés Bello,
-                    Estado Miranda.
-                </p>
-
-                <button class="primary-button" data-phase="fase1">
-                    Explorar proyecto
-                    <span>↗</span>
-                </button>
+                <h1>Servicio técnico a una computadora portátil marca <span>ACER.</span></h1>
+                <p>Ubicada en la Urbanización Las Manuelas, Municipio Andrés Bello, Estado Miranda.</p>
+                <button class="primary-button" data-phase="fase1">Explorar proyecto <span>↗</span></button>
             </div>
-
             <div class="hero-visual">
                 <div class="visual-glow"></div>
-                <div class="visual-label">
-                    <span>ACER</span>
-                    <strong>Mantenimiento preventivo</strong>
+                <div class="hero-photo-frame">
+                    <img src="./imagenes/portada.png" alt="Portada del proyecto sociotecnológico">
+                    <div class="visual-label">
+                        <span>ACER ASPIRE 3</span>
+                        <strong>Mantenimiento preventivo</strong>
+                    </div>
                 </div>
             </div>
-
             <div class="hero-bottom">
                 <span>LAS MANUELAS · MIRANDA · VENEZUELA</span>
                 <span>2026</span>
             </div>
-
         </section>
 
-
-        <!-- PRESENTACIÓN DE LAS FASES -->
         <section class="phases-section" id="proyecto">
-
             <div class="section-heading">
                 <span class="eyebrow">RECORRIDO DEL PROYECTO</span>
                 <h2>Tres fases. <span>Un propósito.</span></h2>
-                <p>
-                    Conoce el proceso desde el estudio de la comunidad
-                    hasta la ejecución y los resultados del mantenimiento.
-                </p>
+                <p>Conoce el proceso desde el estudio de la comunidad hasta la ejecución y los resultados del mantenimiento.</p>
             </div>
-
-
             <div class="phases-grid">
-
                 <article class="phase-card">
                     <span class="phase-number">01 / FASE I</span>
                     <div class="phase-icon">⌖</div>
                     <h3>La comunidad</h3>
-                    <p>
-                        Conoce la historia, características y necesidades
-                        de la Urbanización Las Manuelas.
-                    </p>
-                    <button class="text-button" data-phase="fase1">
-                        Ver más <span>↗</span>
-                    </button>
+                    <p>Conoce la historia, características y necesidades de la Urbanización Las Manuelas.</p>
+                    <button class="text-button" data-phase="fase1">Ver más <span>↗</span></button>
                 </article>
-
-
                 <article class="phase-card">
                     <span class="phase-number">02 / FASE II</span>
                     <div class="phase-icon">⌘</div>
                     <h3>Diagnóstico técnico</h3>
-                    <p>
-                        Descubre las condiciones de la laptop ACER
-                        y el problema identificado.
-                    </p>
-                    <button class="text-button" data-phase="fase2">
-                        Ver más <span>↗</span>
-                    </button>
+                    <p>Descubre las condiciones de la laptop ACER y el problema identificado.</p>
+                    <button class="text-button" data-phase="fase2">Ver más <span>↗</span></button>
                 </article>
-
-
                 <article class="phase-card">
                     <span class="phase-number">03 / FASE III</span>
                     <div class="phase-icon">✳</div>
                     <h3>Trabajo y resultados</h3>
-                    <p>
-                        Conoce las actividades realizadas, el
-                        mantenimiento y sus resultados.
-                    </p>
-                    <button class="text-button" data-phase="fase3">
-                        Ver más <span>↗</span>
-                    </button>
+                    <p>Conoce las actividades realizadas, el mantenimiento y sus resultados.</p>
+                    <button class="text-button" data-phase="fase3">Ver más <span>↗</span></button>
                 </article>
-
             </div>
         </section>
 
-
         <!-- FASE I -->
         <section class="phase-view" id="fase1" hidden>
-
             <button class="back-button" data-home>← Volver al inicio</button>
-
             <div class="phase-intro">
                 <span class="eyebrow">FASE I · ASPECTOS GENERALES</span>
                 <h2>Conociendo <span>Las Manuelas.</span></h2>
-                <p>
-                    Un acercamiento a la historia, el entorno y las
-                    características de la comunidad donde se desarrolla
-                    el proyecto.
-                </p>
+                <p>Un acercamiento a la historia, el entorno y las características de la comunidad donde se desarrolla el proyecto.</p>
             </div>
-
             <div class="info-grid">
-                <article class="info-card">
-                    <span>01</span>
-                    <h3>Origen e historia</h3>
-                    <p>
-                        Las Manuelas pasó de ser un terreno dedicado
-                        a la agricultura y ganadería a convertirse en
-                        una urbanización residencial.
-                    </p>
-                </article>
-
-                <article class="info-card">
-                    <span>02</span>
-                    <h3>Ubicación</h3>
-                    <p>
-                        Está situada en San José de Barlovento,
-                        Municipio Andrés Bello, estado Miranda.
-                    </p>
-                </article>
-
-                <article class="info-card">
-                    <span>03</span>
-                    <h3>Vida comunitaria</h3>
-                    <p>
-                        Cuenta con espacios de atención de salud,
-                        formación musical y organización comunal.
-                    </p>
-                </article>
+                <article class="info-card"><span>01</span><h3>Origen e historia</h3><p>Las Manuelas pasó de ser un terreno dedicado a la agricultura y ganadería a convertirse en una urbanización residencial.</p></article>
+                <article class="info-card"><span>02</span><h3>Ubicación</h3><p>Está situada en San José de Barlovento, Municipio Andrés Bello, estado Miranda.</p></article>
+                <article class="info-card"><span>03</span><h3>Vida comunitaria</h3><p>Cuenta con espacios de atención de salud, formación musical y organización comunal.</p></article>
             </div>
-
             <div class="community-data">
                 <div><strong>81</strong><span>Viviendas</span></div>
                 <div><strong>96</strong><span>Familias</span></div>
                 <div><strong>231</strong><span>Habitantes</span></div>
             </div>
-
             <div class="map-section">
-                <div>
-                    <span class="eyebrow">UBICACIÓN GEOGRÁFICA</span>
-                    <h3>Urbanización Las Manuelas</h3>
-                    <p>San José de Barlovento, estado Miranda.</p>
-                </div>
-
-                <iframe
-                    src="https://maps.google.com/maps?q=10.300216,-65.9916189&z=16&output=embed"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
+                <div><span class="eyebrow">UBICACIÓN GEOGRÁFICA</span><h3>Urbanización Las Manuelas</h3><p>San José de Barlovento, estado Miranda.</p><a class="map-link" href="https://www.google.com/maps/@10.300216,-65.9916189,428m/data=!3m1!1e3" target="_blank" rel="noopener">Abrir ubicación en Google Maps ↗</a></div>
+                <iframe title="Mapa de Urbanización Las Manuelas" src="https://maps.google.com/maps?q=10.300216,-65.9916189&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
             </div>
-
+            <div class="phase-photo-section">
+                <div class="section-heading compact-heading"><span class="eyebrow">REGISTRO DE LA COMUNIDAD</span><h3>Espacios de <span>Las Manuelas.</span></h3><p>Algunos lugares y servicios presentes en el entorno comunitario.</p></div>
+                <div class="photo-grid community-photo-grid">
+                    <figure class="photo-card"><img src="imagenes/comunidad-entrada..png" alt="Entrada de la Urbanización Las Manuelas"><figcaption><strong>Entrada principal</strong><span>Acceso a la Urbanización Las Manuelas.</span></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/comunidad-calles..jpeg" alt="Calles de Las Manuelas"><figcaption><strong>Calles de la comunidad</strong><span>Vista de las calles y distribución de la urbanización.</span></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/comunidad-dentista..jpeg" alt="Espacio de atención odontológica"><figcaption><strong>Atención odontológica</strong><span>Espacio destinado a los servicios de salud dental.</span></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/comunidad-musica..png" alt="Espacio de formación musical"><figcaption><strong>Formación musical</strong><span>Espacio de formación musical y cultural.</span></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/comunidad-universidad..jpeg" alt="Espacio universitario de salud"><figcaption><strong>Formación en salud</strong><span>Área vinculada a la formación universitaria en salud.</span></figcaption></figure>
+                </div>
+            </div>
+            <div class="phase-navigation"><button class="secondary-button" data-home>← Inicio</button><button class="primary-button" data-phase="fase2">Continuar a Fase 2 →</button></div>
         </section>
-
 
         <!-- FASE II -->
         <section class="phase-view" id="fase2" hidden>
-
             <button class="back-button" data-home>← Volver al inicio</button>
-
             <div class="phase-intro">
                 <span class="eyebrow">FASE II · IDENTIFICACIÓN DEL PROBLEMA</span>
                 <h2>El equipo <span>ACER.</span></h2>
-                <p>
-                    Diagnóstico de las condiciones físicas y lógicas
-                    de la computadora portátil ubicada en la comunidad.
-                </p>
+                <p>Diagnóstico de las condiciones físicas y lógicas de la computadora portátil ubicada en la comunidad.</p>
             </div>
-
             <div class="computer-overview">
                 <div class="computer-visual">
-                    <span>ACER</span>
-                    <strong>Aspire 3</strong>
-                    <small>Modelo N18Q5</small>
+                    <img src="imagenes/acer-antes.jpg" alt="Computadora Acer antes del mantenimiento">
+                    <div class="computer-visual-caption"><span>ACER</span><strong>Aspire 3</strong><small>Modelo N18Q5 · Estado inicial</small></div>
                 </div>
-
                 <div class="specifications">
                     <h3>Características técnicas</h3>
-
-                    <div class="spec-row">
-                        <span>Procesador</span>
-                        <strong>Intel Celeron N4000</strong>
-                    </div>
-
-                    <div class="spec-row">
-                        <span>Memoria RAM</span>
-                        <strong>4 GB DDR4</strong>
-                    </div>
-
-                    <div class="spec-row">
-                        <span>Almacenamiento</span>
-                        <strong>HDD 500 GB</strong>
-                    </div>
-
-                    <div class="spec-row">
-                        <span>Pantalla</span>
-                        <strong>15.6 pulgadas HD</strong>
-                    </div>
-
-                    <div class="spec-row">
-                        <span>Sistema inicial</span>
-                        <strong>Windows 10 Pro</strong>
-                    </div>
+                    <div class="spec-row"><span>Procesador</span><strong>Intel Celeron N4000</strong></div>
+                    <div class="spec-row"><span>Memoria RAM</span><strong>4 GB DDR4</strong></div>
+                    <div class="spec-row"><span>Almacenamiento</span><strong>HDD 500 GB</strong></div>
+                    <div class="spec-row"><span>Pantalla</span><strong>15.6 pulgadas HD</strong></div>
+                    <div class="spec-row"><span>Sistema inicial</span><strong>Windows 10 Pro</strong></div>
                 </div>
             </div>
-
             <div class="info-grid">
-                <article class="info-card">
-                    <span>HARDWARE</span>
-                    <h3>Estado físico</h3>
-                    <p>
-                        Se identificó acumulación de polvo en el teclado,
-                        puertos y rejillas de ventilación.
-                    </p>
-                </article>
-
-                <article class="info-card">
-                    <span>SOFTWARE</span>
-                    <h3>Rendimiento</h3>
-                    <p>
-                        El sistema presentaba lentitud, archivos
-                        acumulados y consumo elevado de memoria.
-                    </p>
-                </article>
-
-                <article class="info-card">
-                    <span>PROBLEMA</span>
-                    <h3>Necesidad identificada</h3>
-                    <p>
-                        Era necesario realizar mantenimiento preventivo
-                        físico y lógico para mejorar su funcionamiento.
-                    </p>
-                </article>
+                <article class="info-card"><span>HARDWARE</span><h3>Estado físico</h3><p>Se identificó acumulación de polvo en el teclado, puertos y rejillas de ventilación.</p></article>
+                <article class="info-card"><span>SOFTWARE</span><h3>Rendimiento</h3><p>El sistema presentaba lentitud, archivos acumulados y consumo elevado de memoria.</p></article>
+                <article class="info-card"><span>PROBLEMA</span><h3>Necesidad identificada</h3><p>Era necesario realizar mantenimiento preventivo físico y lógico para mejorar su funcionamiento.</p></article>
             </div>
-
+            <div class="phase-navigation"><button class="secondary-button" data-phase="fase1">← Fase 1</button><button class="primary-button" data-phase="fase3">Continuar a Fase 3 →</button></div>
         </section>
-
 
         <!-- FASE III -->
         <section class="phase-view" id="fase3" hidden>
-
             <button class="back-button" data-home>← Volver al inicio</button>
-
             <div class="phase-intro">
                 <span class="eyebrow">FASE III · EJECUCIÓN Y RESULTADOS</span>
                 <h2>Del diagnóstico <span>a la solución.</span></h2>
-                <p>
-                    Actividades desarrolladas para recuperar y optimizar
-                    el funcionamiento de la computadora portátil.
-                </p>
+                <p>Actividades desarrolladas para recuperar y optimizar el funcionamiento de la computadora portátil.</p>
             </div>
-
             <div class="process-list">
-
-                <article class="process-item">
-                    <span>01</span>
-                    <div>
-                        <h3>Inspección y diagnóstico</h3>
-                        <p>
-                            Revisión del estado físico, los componentes
-                            y el sistema operativo del equipo.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="process-item">
-                    <span>02</span>
-                    <div>
-                        <h3>Planificación</h3>
-                        <p>
-                            Organización de las actividades y selección
-                            de herramientas e insumos.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="process-item">
-                    <span>03</span>
-                    <div>
-                        <h3>Mantenimiento físico</h3>
-                        <p>
-                            Limpieza de las áreas externas accesibles,
-                            teclado, puertos y rejillas de ventilación.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="process-item">
-                    <span>04</span>
-                    <div>
-                        <h3>Mantenimiento lógico</h3>
-                        <p>
-                            Respaldo de archivos, formateo e instalación
-                            limpia de Windows 10.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="process-item">
-                    <span>05</span>
-                    <div>
-                        <h3>Configuración final</h3>
-                        <p>
-                            Instalación de Microsoft Word y Canva,
-                            y configuración de la impresora.
-                        </p>
-                    </div>
-                </article>
-
+                <article class="process-item"><span>01</span><div><h3>Inspección y diagnóstico</h3><p>Revisión del estado físico, los componentes y el sistema operativo del equipo.</p></div></article>
+                <article class="process-item"><span>02</span><div><h3>Planificación</h3><p>Organización de las actividades y selección de herramientas e insumos.</p></div></article>
+                <article class="process-item"><span>03</span><div><h3>Mantenimiento físico</h3><p>Limpieza de las áreas externas accesibles, teclado, puertos y rejillas de ventilación.</p></div></article>
+                <article class="process-item"><span>04</span><div><h3>Mantenimiento lógico</h3><p>Respaldo de archivos, formateo e instalación limpia de Windows 10.</p></div></article>
+                <article class="process-item"><span>05</span><div><h3>Configuración final</h3><p>Instalación de Microsoft Word y Canva, y configuración de la impresora.</p></div></article>
             </div>
-
+            <div class="phase-photo-section">
+                <div class="section-heading compact-heading"><span class="eyebrow">EVIDENCIA VISUAL</span><h3>Proceso de <span>mantenimiento.</span></h3><p>Registro del estado del equipo y una vista ilustrativa de sus componentes internos.</p></div>
+                <div class="photo-grid laptop-photo-grid">
+                    <figure class="photo-card"><img src="imagenes/acer-antes.jpg" alt="Acer antes del mantenimiento"><figcaption><strong>Estado inicial del equipo</strong><span>Condiciones de la laptop antes de realizar el mantenimiento.</span></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/acer-interior-ilustrativa..png" alt="Ilustración de los componentes internos de una laptop Acer"><figcaption><strong>Componentes internos</strong><span>Imagen ilustrativa de los componentes internos y los materiales de limpieza.</span><em>Imagen ilustrativa, no fotografía documental.</em></figcaption></figure>
+                    <figure class="photo-card"><img src="imagenes/acer-final..jpeg" alt="Acer después del mantenimiento"><figcaption><strong>Resultado final</strong><span>Presentación de la computadora después del mantenimiento.</span></figcaption></figure>
+                </div>
+            </div>
             <div class="results-panel">
                 <span class="eyebrow">RESULTADO DEL PROYECTO</span>
                 <h3>Un equipo recuperado para continuar apoyando a la comunidad.</h3>
-                <p>
-                    Se obtuvo una mejora en la fluidez del sistema,
-                    limpieza de las áreas accesibles y disponibilidad
-                    de herramientas esenciales para trabajos digitales.
-                </p>
+                <p>Se obtuvo una mejora en la fluidez del sistema, limpieza de las áreas accesibles y disponibilidad de herramientas esenciales para trabajos digitales.</p>
             </div>
-
             <div class="recommendations">
                 <h3>Recomendaciones de cuidado</h3>
-                <ul>
-                    <li>Utilizar la laptop sobre superficies planas y limpias.</li>
-                    <li>Realizar limpieza externa periódicamente.</li>
-                    <li>Evitar instalar programas innecesarios.</li>
-                    <li>Utilizar protección eléctrica.</li>
-                    <li>Mantener respaldos de los documentos importantes.</li>
-                </ul>
+                <ul><li>Utilizar la laptop sobre superficies planas y limpias.</li><li>Realizar limpieza externa periódicamente.</li><li>Evitar instalar programas innecesarios.</li><li>Utilizar protección eléctrica.</li><li>Mantener respaldos de los documentos importantes.</li></ul>
             </div>
-
+            <div class="phase-navigation"><button class="secondary-button" data-phase="fase2">← Fase 2</button><button class="primary-button" data-home>Volver al inicio</button></div>
         </section>
 
-
-        <!-- GALERÍA -->
+        <!-- BIBLIOTECA FOTOGRÁFICA -->
         <section class="gallery-section" id="galeria">
-
             <div class="section-heading">
                 <span class="eyebrow">REGISTRO FOTOGRÁFICO</span>
-                <h2>Momentos del <span>proyecto.</span></h2>
-                <p>
-                    Un recorrido visual por la comunidad,
-                    el equipo y las actividades realizadas.
-                </p>
+                <h2>Biblioteca del <span>proyecto.</span></h2>
+                <p>Explora las fotografías de la comunidad y del mantenimiento de la computadora. Cada imagen incluye una breve descripción.</p>
             </div>
-
-            <div class="gallery-placeholder">
-                <span>✳</span>
-                <h3>Nuestra galería</h3>
-                <p>
-                    Aquí incorporaremos las fotografías reales
-                    de las tres fases del proyecto.
-                </p>
+            <div class="gallery-shell" aria-label="Biblioteca fotográfica del proyecto">
+                <div class="gallery-stage">
+                    <button class="gallery-arrow gallery-prev" type="button" aria-label="Fotografía anterior">‹</button>
+                    <img class="gallery-main-image" id="galleryImage" src="imagenes/comunidad-entrada..png" alt="Entrada principal de Las Manuelas">
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Fotografía siguiente">›</button>
+                </div>
+                <div class="gallery-caption" aria-live="polite">
+                    <div><span class="eyebrow" id="galleryCategory">COMUNIDAD</span><h3 id="galleryTitle">Entrada principal</h3><p id="galleryDescription">Acceso a la Urbanización Las Manuelas.</p></div>
+                    <span class="gallery-counter" id="galleryCounter">01 / 08</span>
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-play" id="galleryPlay" type="button" aria-label="Pausar presentación">Ⅱ Pausar</button>
+                    <div class="gallery-dots" id="galleryDots" aria-label="Seleccionar fotografía"></div>
+                </div>
+                <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Miniaturas de fotografías"></div>
             </div>
-
         </section>
-
     </main>
 
-
-    <!-- PIE DE PÁGINA -->
     <footer class="footer">
-        <a href="#" class="logo">PROYECTO<span>.</span></a>
-
-        <p>
-            Proyecto Sociotecnológico · PNF Informática
-        </p>
-
+        <a href="#" class="logo" data-home>PROYECTO<span>.</span></a>
+        <p>Proyecto Sociotecnológico · PNF Informática</p>
         <span>Las Manuelas · Miranda · Venezuela · 2026</span>
     </footer>
-
-
     <script src="script.js"></script>
-
 </body>
 </html>
